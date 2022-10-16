@@ -42,3 +42,55 @@
 .btn-sec{
     width: 50px; 
 }
+
+@media screen and (max-width: 930px) {
+    .Assignment{
+        width: 20rem;
+    }
+
+    .first-input{
+        width: 7rem;
+    }
+    .height{
+        height: 2.3rem;
+    }
+
+}
+@media screen and (max-width: 700px) {
+    .input{
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between ;
+    }
+
+    .btn{
+        margin-left: 0px;
+    }
+    .Assignment{
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-left: 60px;
+    }
+
+    .m-l3{
+        margin-left: 3px;
+    }
+}
+
+@media screen and (max-width: 550px){
+    .Assignment{
+        width: 12rem;
+        
+    }
+    .height{
+        height: 2rem;
+    }
+    .first-input{
+        width: 6rem;
+    }
+
+    .btn{
+        width: 60px;
+        font-size: 10px;
+    }
+}

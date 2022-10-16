@@ -5,7 +5,7 @@ import "./Input.css"
 
 export default function Input() {
     
-    let [date, setDate] = useState({})
+    let [date, setDate] = useState("")
     let [text , setText] = useState("");
     let [textArr , setTextArr] = useState([]);
 
@@ -15,15 +15,18 @@ export default function Input() {
         console.log("submit");
         setDate(new Date());
 
-        if (!text) {
+        if (!text === "") {
             return
         }
+
         else{
 
-            setTextArr([...textArr, {text , date}]);
-            setText("");
-            setDate({});
+            setTextArr([...textArr, {"text": text , "date" : date}]);
+            localStorage.setItem(JSON.stringify("newItem", textArr))
         }
+
+        setText("");
+        setDate("");
     }
 
     const deleteHandler = (e)=>{
@@ -65,13 +68,13 @@ export default function Input() {
       <hr/>
 
         <form className='input' >
-            <div className="inputs"><input type="text" placeholder='Class ID' className='height' /></div>
+            <div className="inputs"><input type="text" placeholder='Class ID' className='height first-input' /></div>
 
             <div className="inputs">
 
                 <input type="text"  placeholder='Enter Any Text Or Link' onChange={(e)=>{setText(e.target.value)}} value={text} className='height Assignment' />
 
-            <button className='height btn btn-primary' onClick={submitHandler}>Submit</button>
+            <button className='height btn btn-primary m-l3' onClick={submitHandler}>Submit</button>
             </div>
 
             <div className="inputs">

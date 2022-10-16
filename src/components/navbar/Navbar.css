@@ -11,3 +11,9 @@
 .header > p{
     margin-left: 10px;
 }
+
+@media screen and (max-width: 550px){
+    .header{
+        font-size: 1rem;
+    }
+}
