@@ -1,0 +1,34 @@
+.mainSection{
+    display: flex;
+    border: 1px solid grey;
+    border-radius: 20px;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.box1{
+    flex: 2;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 18px;
+}
+
+.box2{
+    flex: 10;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.red{
+    color: red;
+    width: 40px;
+    border: none;
+}
+/* .my-3{
+    margin-top: 3px;
+    margin-bottom: 3px;
+} */

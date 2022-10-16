@@ -1,0 +1,38 @@
+.input{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container{
+    padding: 40px;
+}
+
+.height{
+    height: 3rem;
+    border-radius: 50px;
+    text-align: center;
+    align-items: center;
+}
+
+.Assignment{
+    width: 400px;
+}
+
+.btn{
+    cursor: pointer;
+    margin-left: 5px;
+    background-color: #6601eb;
+    color: #ffff;
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    border: 0px;
+}
+
+.btn-primary{
+    width: 80px;
+}
+
+.btn-sec{
+    width: 50px; 
+}
