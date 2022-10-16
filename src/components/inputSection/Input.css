@@ -98,3 +98,28 @@
         font-size: 10px;
     }
 }
+
+@media screen and (max-width: 400px){
+    .second{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .Assignment{
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-left: 0px;
+    }
+
+    .m-l3{
+        margin-left: 0px;
+    }
+    .last{
+        margin-top: 3px;
+    }
+
+    .height{
+        height: 1.5rem;
+    }
+}

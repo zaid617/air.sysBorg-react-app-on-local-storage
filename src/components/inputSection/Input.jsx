@@ -1,20 +1,19 @@
 
-import { useState } from "react"
+import {useEffect , useState } from "react"
 import MainSection from "../mainSection/MainSection"
 import "./Input.css"
 
 export default function Input() {
 
-    let takeNote = localStorage.getItem("newNote");
-    let newNote = JSON.parse(takeNote) || [] ;
-    let [date, setDate] = useState("")
     let [text , setText] = useState("");
-    let [textArr , setTextArr] = useState(newNote);
+    let [textArr , setTextArr] = useState([]);
     
-//   useEffect(()=>{
-//     setTextArr(newNote)
+    useEffect(()=>{
+      let takeNote = localStorage.getItem("newNote");
+      let newNote = JSON.parse(takeNote) || [] ;
+    setTextArr(newNote)
 
-//   },[])
+  },[])
     
 
     const submitHandler = (e)=>{
@@ -29,13 +28,14 @@ export default function Input() {
         else{
             
             let dates = new Date();
-            dates = dates.getTime();
-            setDate(dates);
-            setTextArr([...textArr, {"text": text , "date" : date}]);
+            let newdates = dates.getTime();
+
+            console.log(newdates);
+
+            setTextArr([...textArr, {"text": text , "date" : newdates}]);
             let localArr = textArr
             localStorage.setItem("newNote", JSON.stringify(localArr))
             setText("");
-            setDate("");
         }
 
     }
@@ -84,7 +84,7 @@ export default function Input() {
         <form className='input' >
             <div className="inputs"><input type="text" placeholder='Class ID' className='height first-input' /></div>
 
-            <div className="inputs">
+            <div className="inputs second">
 
                 <input type="text"  placeholder='Enter Any Text Or Link' onChange={(e)=>{setText(e.target.value)}} value={text} className='height Assignment' />
 
@@ -92,7 +92,7 @@ export default function Input() {
             </div>
 
             <div className="inputs">
-                <button className='height btn btn-primary' onClick={deleteHandler}>Delete all</button>
+                <button className='height btn btn-primary last' onClick={deleteHandler}>Delete all</button>
             </div>
         </form>
 
