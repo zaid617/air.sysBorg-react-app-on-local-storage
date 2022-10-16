@@ -1,10 +1,12 @@
 import React from 'react'
-import moment from 'moment';
 import "./mainSection.css"
+import moment from 'moment';
 
 export default function MainSection(props) {
+    
 
   return (
+    
     <div className='mainSection'>
       <div className="box1">
         <div><strong >192.168.100</strong></div>
