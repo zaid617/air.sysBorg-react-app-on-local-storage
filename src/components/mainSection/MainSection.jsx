@@ -11,7 +11,7 @@ export default function MainSection(props) {
       <div className="box1">
         <div><strong >192.168.100</strong></div>
         <div>{moment(props.date).fromNow()}</div>
-        <div ><input className='red' readOnly type="text" value={"Delete"} /></div>
+        <div ><input className='red' readOnly type="text" onClick={() => props.delete(props.id)} value={"Delete"} /></div>
       </div>
 
       <div className="box2">

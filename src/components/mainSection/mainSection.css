@@ -22,14 +22,16 @@
     display: flex;
     align-items: center;
     padding: 20px;
+    
 }
 
 .red{
     color: red;
     width: 40px;
     border: none;
+    outline: none;
+    cursor: pointer;
 }
-/* .my-3{
-    margin-top: 3px;
-    margin-bottom: 3px;
-} */
+.red:hover{
+    font-weight: 600;
+}

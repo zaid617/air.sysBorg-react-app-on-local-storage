@@ -28,12 +28,41 @@ export default function Input() {
 
     const deleteHandler = (e)=>{
         e.preventDefault();
-        console.log("delete all");
-        setTextArr([])
+
+        if (textArr.length === 0) {
+            return
+        }
+        else{
+        let allow = window.confirm("Do You Want To Delete All Items ?");
+
+        if (allow) {
+            console.log("delete all");
+            setTextArr([])
+        }
+
+        else{
+            return
+        }
     }
+        
+    }
+
+
+    const deleteItem = (i)=>{
+        console.log("item deleted");
+        let updatedItem = textArr.filter((item, index) => {
+            console.log(i);
+            return index !== i
+          })
+          setTextArr(updatedItem)
+    }
+
 
     return (
         <div className="container">
+
+            
+      <hr/>
 
         <form className='input' >
             <div className="inputs"><input type="text" placeholder='Class ID' className='height' /></div>
@@ -43,14 +72,14 @@ export default function Input() {
                 <input type="text"  placeholder='Enter Any Text Or Link' onChange={(e)=>{setText(e.target.value)}} value={text} className='height Assignment' />
 
             <button className='height btn btn-primary' onClick={submitHandler}>Submit</button>
-
-            <input readOnly type={"buttun"} className='height btn btn-sec' value={"img"} />
             </div>
 
             <div className="inputs">
                 <button className='height btn btn-primary' onClick={deleteHandler}>Delete all</button>
             </div>
         </form>
+
+        <hr />
 
         {
             textArr.map((elem,i)=>{
@@ -59,6 +88,7 @@ export default function Input() {
                 id={i}
                 text={elem.text}
                 date = {elem.date}
+                delete = {deleteItem}
                 />
             })
         }

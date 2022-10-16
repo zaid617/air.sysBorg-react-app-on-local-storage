@@ -2,6 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .container{
@@ -27,6 +29,10 @@
     font-family: 'Playfair Display', serif;
     font-weight: 500;
     border: 0px;
+}
+
+.btn:hover{
+    background-color: #8932fa;
 }
 
 .btn-primary{
