@@ -19,6 +19,7 @@
 
 .Assignment{
     width: 30rem;
+    border: 1px solid black;
 }
 
 .btn{
@@ -29,6 +30,9 @@
     font-family: 'Playfair Display', serif;
     font-weight: 500;
     border: 0px;
+}
+.first-input{
+    border: 1px solid black;
 }
 
 .btn:hover{

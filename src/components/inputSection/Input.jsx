@@ -4,29 +4,40 @@ import MainSection from "../mainSection/MainSection"
 import "./Input.css"
 
 export default function Input() {
-    
+
+    let takeNote = localStorage.getItem("newNote");
+    let newNote = JSON.parse(takeNote) || [] ;
     let [date, setDate] = useState("")
     let [text , setText] = useState("");
-    let [textArr , setTextArr] = useState([]);
+    let [textArr , setTextArr] = useState(newNote);
+    
+//   useEffect(()=>{
+//     setTextArr(newNote)
+
+//   },[])
+    
 
     const submitHandler = (e)=>{
 
         e.preventDefault();
         console.log("submit");
-        setDate(new Date());
-
-        if (!text === "") {
+        
+        if (!text) {
             return
         }
-
+        
         else{
-
+            
+            let dates = new Date();
+            dates = dates.getTime();
+            setDate(dates);
             setTextArr([...textArr, {"text": text , "date" : date}]);
-            localStorage.setItem(JSON.stringify("newItem", textArr))
+            let localArr = textArr
+            localStorage.setItem("newNote", JSON.stringify(localArr))
+            setText("");
+            setDate("");
         }
 
-        setText("");
-        setDate("");
     }
 
     const deleteHandler = (e)=>{
@@ -40,6 +51,7 @@ export default function Input() {
 
         if (allow) {
             console.log("delete all");
+            localStorage.removeItem("newNote")
             setTextArr([])
         }
 
@@ -58,6 +70,8 @@ export default function Input() {
             return index !== i
           })
           setTextArr(updatedItem)
+          localStorage.removeItem("newNote")
+          localStorage.setItem(JSON.stringify("newNote",textArr))
     }
 
 
