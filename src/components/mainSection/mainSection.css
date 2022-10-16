@@ -1,14 +1,19 @@
-.mainSection{
+.mainSection {
     display: flex;
-    border: 1px solid grey;
-    border-radius: 20px;
     margin-top: 20px;
     align-items: center;
     justify-content: space-between;
+
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 20px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.18);
 }
 
 
-.box1{
+.box1 {
     flex: 2;
     padding: 30px;
     display: flex;
@@ -17,28 +22,36 @@
     font-size: 16px;
 }
 
-.box2{
+.box2 {
     flex: 10;
     display: flex;
     padding: 20px;
     width: 100%;
     word-break: break-word;
-    
+    font-family: 'Playfair Display', serif;
+
 }
 
-.red{
+.innerBox{
+    border: 2px solid black;
+    border-radius: 20px ;
+}
+
+.red {
     color: red;
     width: 40px;
     border: none;
     outline: none;
     cursor: pointer;
+    background-color: #f7f7f7;
 }
-.red:hover{
+
+.red:hover {
     font-weight: 600;
 }
 
-@media screen and (max-width: 900px){
-    .box1{
+@media screen and (max-width: 900px) {
+    .box1 {
         font-size: 13px;
     }
 }
