@@ -10,7 +10,7 @@ export default function Input() {
     
     useEffect(()=>{
       let takeNote = localStorage.getItem("newNote");
-      let newNote = JSON.parse(takeNote) ;
+      let newNote = JSON.parse(takeNote) || [];
     setTextArr(newNote)
 
   },[])
